@@ -1,0 +1,34 @@
+[MASTER]
+fail-under=8
+load-plugins=pylint.extensions.docparams
+max-args=6
+suggestion-mode=yes
+fail-on= missing-raises-doc,
+        differing-param-doc,
+        missing-param-doc,
+        differing-type-doc,
+        missing-function-docstring,
+        missing-class-docstring,
+        empty-docstring,
+        missing-module-docstring,
+        unused-import,
+        unused-variable
+[LOGGING]
+logging-format-style=new
+logging-modules=logging
+[pylint.FORMAT]
+disable=logging-fstring-interpolation
+[REPORTS]
+output-format=colorized
+score=yes
+[BASIC]
+argument-naming-style=snake_case
+bad-names=foo,
+          bar,
+          baz,
+          toto,
+          tutu,
+          tata
+class-naming-style=PascalCase
+function-naming-style=snake_case
+module-naming-style=snake_case
