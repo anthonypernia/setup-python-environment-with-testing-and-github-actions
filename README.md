@@ -4,28 +4,7 @@
     </h1>
     <p>This repository was created from some blogs and documents, which I will leave below.</p>
     <br>
-    <h3>Github action <code>.github/workflows/pre-commit-check.yml</code></h3>
-    <pre><code>
-name: pre-commit
-on:
-  pull_request:
-  push:
-    branches: [main]
-jobs:
-  pre-commit:
-    runs-on: ubuntu-latest
-    steps:
-    - uses: actions/checkout@v3
-    - uses: actions/setup-python@v3
-    - name: Install pre-commit
-      run: |
-        pip install pre-commit
-    - name: Install requirements
-      run: |
-        pip install -r requirements.txt
-    - uses: pre-commit/action@v3.0.0
-    </code></pre>
-    <h3>Pre-commit file: <code>.pre-commit-config.yaml</code></h3>
+        <h3>Pre-commit file: <code>.pre-commit-config.yaml</code></h3>
     <pre><code>
 fail_fast: false
 repos:
@@ -83,6 +62,27 @@ repos:
     hooks:
         - id: pyupgrade #pyupgrade is a pre-commit hook that runs to check for issues in th  codebase
           args: [--py36-plus]
+    </code></pre>
+    <h3>The Github action <code>.github/workflows/pre-commit-check.yml</code></h3>
+    <pre><code>
+name: pre-commit
+on:
+  pull_request:
+  push:
+    branches: [main]
+jobs:
+  pre-commit:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - uses: actions/setup-python@v3
+    - name: Install pre-commit
+      run: |
+        pip install pre-commit
+    - name: Install requirements
+      run: |
+        pip install -r requirements.txt
+    - uses: pre-commit/action@v3.0.0
     </code></pre>
     <br>
     The documentation that I used to create this repository is:
