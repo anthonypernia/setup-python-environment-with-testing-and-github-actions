@@ -39,7 +39,7 @@ repos:
         - id: detect-aws-credentials # detect-aws-credentials is not in repo
         - id: detect-private-key # detect-private-key is not in repo
         - id: check-yaml
-        - id: check-added-large-files 
+        - id: check-added-large-files
         - id: check-shebang-scripts-are-executable
         - id: check-case-conflict #Check for files with names that would conflict on    case-insensitive filesystem like MacOS HFS+ or Windows FAT
         - id: end-of-file-fixer #Makes sure files end in a newline and only a newline
@@ -64,7 +64,7 @@ repos:
           args: ["--profile", "black", "--filter-files"]
   - repo: local
     hooks:
-        - id: pylint # pylint is a pre-commit hook that runs as a linter to check for style 
+        - id: pylint # pylint is a pre-commit hook that runs as a linter to check for style
           name: pylint
           entry: pylint
           language: system
@@ -85,6 +85,7 @@ repos:
           args: [--py36-plus]
     </code></pre>
     <br>
+    The documentation that I used to create this repository is:
     <p><a href="https://pre-commit.com/#install">https://pre-commit.com/#install</a></p>
     <p><a href="https://pre-commit.com/#usage">https://pre-commit.com/#usage</a></p>
     <p><a href="https://composed.blog/python/pre-commit">https://composed.blog/python/pre-commit</a></p>
