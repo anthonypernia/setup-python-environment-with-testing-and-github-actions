@@ -15,7 +15,6 @@ repos:
         - id: check-ast #Simply check whether files parse as valid python
         - id: fix-byte-order-marker #removes UTF-8 byte order marker
         - id: check-json
-        - id: detect-aws-credentials # detect-aws-credentials is not in repo
         - id: detect-private-key # detect-private-key is not in repo
         - id: check-yaml
         - id: check-added-large-files
@@ -63,7 +62,7 @@ repos:
         - id: pyupgrade #pyupgrade is a pre-commit hook that runs to check for issues in th  codebase
           args: [--py36-plus]
     </code></pre>
-    <h3>The Github action <code>.github/workflows/pre-commit-check.yml</code></h3>
+    <h3>The Github action to execute pre-commit as a workflow part is: <code>.github/workflows/pre-commit-check.yml</code></h3>
     <pre><code>
 name: pre-commit
 on:

@@ -8,7 +8,6 @@ repos:
       - id: check-ast #Simply check whether files parse as valid python
       - id: fix-byte-order-marker #removes UTF-8 byte order marker
       - id: check-json
-      - id: detect-aws-credentials # detect-aws-credentials is not in repo
       - id: detect-private-key # detect-private-key is not in repo
       - id: check-yaml
       - id: check-added-large-files
