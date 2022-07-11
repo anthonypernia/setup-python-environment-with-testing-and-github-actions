@@ -12,12 +12,20 @@
     <p>And then, the library starts checking the code with all the hooks that we are using in the <code>pre-commit-config</code> file</p>
     <p>you could receive three messages in the pipeline:</p>
     <ul>
-    <li>Passed</li>
-    <li>Failed</li>
-    <li>Skipped</li>
+    <li>Passed - When everything is fine, and I pass the test </li>
+    <li>Failed - When the test failed</li>
+    <li>Skipped - When a test is skipped or does not apply to the file</li>
     </ul>
     <p>The good news is that most hooks do the necessary modifications to improve the code automatically so you just had to add the file again with <code>git add FILE_TO_ADD.py</code> and run again <code>pre-commit run --all-files</code></p>
+    <h4>Here are two running examples</h4>
+    <ul>
+    <li>The first example is when some test fails, in this case the Hook solves the problem and you only need to add the files that were modified </li>
+    <img src="https://raw.githubusercontent.com/anthonypernia/pre-commit-python-action-example/main/examples/example2.png"></img>
+    <li>The second example is when the code passes all tests and is ready to be uploaded to the remote repository.</li>
+    <img src="https://raw.githubusercontent.com/anthonypernia/pre-commit-python-action-example/main/examples/example1.png"></img>
+    </ul>
     <br>
+    <p>The files that we are using:</p>
         <h3>Pre-commit file: <code>.pre-commit-config.yaml</code></h3>
     <pre><code>
 fail_fast: false
