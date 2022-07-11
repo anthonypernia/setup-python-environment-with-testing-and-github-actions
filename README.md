@@ -4,6 +4,20 @@
     </h1>
     <p>This repository was created from some blogs and documents, which I will leave below.</p>
     <br>
+    <h3>How to use:</h3>
+    <Put>Clone the repo <code>https://github.com/anthonypernia/pre-commit-python-action-example.git</code> or just download the files and put the files in your repo</p>
+    <p>Install the libraries, which are in requirements.txt <code>pip install -r requirements.txt </code></p>
+    <p>To execute <code>pre-commit</code> use the following command:</p>
+    <pre><code>pre-commit run --all-files</code></pre>
+    <p>And then, the library starts checking the code with all the hooks that we are using in the <code>pre-commit-config</code> file</p>
+    <p>you could receive three messages in the pipeline:</p>
+    <ul>
+    <li>Passed</li>
+    <li>Failed</li>
+    <li>Skipped</li>
+    </ul>
+    <p>The good news is that most hooks do the necessary modifications to improve the code automatically so you just had to add the file again with <code>git add FILE_TO_ADD.py</code> and run again <code>pre-commit run --all-files</code></p>
+    <br>
         <h3>Pre-commit file: <code>.pre-commit-config.yaml</code></h3>
     <pre><code>
 fail_fast: false
