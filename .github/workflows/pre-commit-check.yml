@@ -13,7 +13,7 @@ jobs:
     - name: Install pre-commit
       run: |
         pip install pre-commit
-    - name: Install requirements.txt
+    - name: Install requirements
       run: |
         pip install -r requirements.txt
     - uses: pre-commit/action@v3.0.0
