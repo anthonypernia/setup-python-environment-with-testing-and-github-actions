@@ -28,7 +28,3 @@ jobs:
           base: develop
           delete-branch: false
           labels: auto-merge
-
-
-        
-
