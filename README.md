@@ -106,6 +106,8 @@ jobs:
     - uses: pre-commit/action@v3.0.0
     </code></pre>
     <br>
+    And also there are two examples in folder ./action-to-use
+    <br>
     The documentation that I used to create this repository is:
     <p><a href="https://pre-commit.com/#install">https://pre-commit.com/#install</a></p>
     <p><a href="https://pre-commit.com/#usage">https://pre-commit.com/#usage</a></p>
