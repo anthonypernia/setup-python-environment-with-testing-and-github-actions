@@ -89,8 +89,9 @@ repos:
 name: pre-commit
 on:
   pull_request:
-  push:
     branches: [main]
+  push:
+    branches: [develop]
 jobs:
   pre-commit:
     runs-on: ubuntu-latest
@@ -106,7 +107,11 @@ jobs:
     - uses: pre-commit/action@v3.0.0
     </code></pre>
     <br>
-    And also there are two examples in folder ./action-to-use
+    Also, in the folder "./actions-to-use" there are two examples:
+    <ul>
+    <li>accept-all.yml, if we want to approve all the PRs that pass the pre-commit</li>
+    <li>check-on-pr-and-push.ym and check-on-pr.yml if we want to run pre-commit on PR</li>
+    </ul>
     <br>
     The documentation that I used to create this repository is:
     <p><a href="https://pre-commit.com/#install">https://pre-commit.com/#install</a></p>
