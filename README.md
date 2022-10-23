@@ -70,9 +70,11 @@ jobs:
     <li><p><a href="https://github.com/anthonypernia/pre-commit-setup-for-python-with-github-action/blob/main/action-to-use/pre-commit-and-merge.yml">pre-commit-and-merge.yml</a>, if you want to approve all the PRs that pass the pre-commit hooks</p></li>
     <li><p><a href="https://github.com/anthonypernia/pre-commit-setup-for-python-with-github-action/blob/main/action-to-use/pre-commit-on-pr.yml">pre-commit-on-pr.yml</a>, if you want to run pre-commit hooks only on PR to Main branch</p></li>
     <li><p><a href="https://github.com/anthonypernia/pre-commit-setup-for-python-with-github-action/blob/main/action-to-use/pre-commit-on-push-and-pr.yml">pre-commit-on-push-and-pr.yml</a>, if you want to run pre-commit hooks on PR to Main branch and Push to Develop branch</p></li>
-    <li><p><a href="https://github.com/anthonypernia/pre-commit-setup-for-python-with-github-action/blob/main/action-to-use/pre-commit-on-push-and-pr.yml">pre-commit-on-push-and-pr.yml</a>, if you want to run pre-commit hooks on PR to Main branch and Push to Develop branch</p></li>
+    <li><p><a href="https://github.com/anthonypernia/pre-commit-setup-for-python-with-github-action/blob/main/action-to-use/pre-commit-and-pytest.yml">pre-commit-and-pytest.yml.yml</a>, if you want to run pre-commit hooks on PR to Main branch and Push to Develop branch, but also run Pytest</p></li>
     <li><p><a href="https://github.com/anthonypernia/pre-commit-setup-for-python-with-github-action/blob/main/action-to-use/pre-commit-pytest-coverage-codecov.yml">pre-commit-pytest-coverage-codecov.yml</a>, if you want to run pre-commit hooks on PR to Main branch,Push to Develop branch, and analyze the coverage using the pytest and coverage libraries usin <a href="https://app.codecov.io/gh">Codecov</a></p></li>
     </ul>
+    <p>The one that I consider the best is the last one, since it checks the coverage, does the tests with pytest, and executes the pre-commit so that you can see the coverage graph in the PR</p>
+    <img src="https://raw.githubusercontent.com/anthonypernia/pre-commit-setup-for-python-with-github-action/develop/assets/pre-commit-ok.png"></img>
     <br>
     The documentation that I used to create this repository is:
     <p><a href="https://pre-commit.com/#install">https://pre-commit.com/#install</a></p>
