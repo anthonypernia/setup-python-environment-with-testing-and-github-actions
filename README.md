@@ -19,71 +19,15 @@
     <p>The good news is that most hooks do the necessary modifications to improve the code automatically so you just had to add the file again with <code>git add FILE_TO_ADD.py</code> and run again <code>pre-commit run --all-files</code></p>
     <h4>Here are two running examples</h4>
     <ul>
-    <li>The first example is when some test fails, in this case the Hook solves the problem and you only need to add the files that were modified </li>
-    <img src="https://raw.githubusercontent.com/anthonypernia/pre-commit-python-action-example/main/assets/example2.png"></img>
+    <li>The first example is when some test fails, in one case the Hook solves the problem and you only need to add the files that were modified, in the other case, you need to solve the code issue</li>
+    <img src="https://raw.githubusercontent.com/anthonypernia/pre-commit-setup-for-python-with-github-action/develop/assets/pre-commit-fail.png"></img>
     <li>The second example is when the code passes all tests and is ready to be uploaded to the remote repository.</li>
-    <img src="https://raw.githubusercontent.com/anthonypernia/pre-commit-python-action-example/main/assets/example1.png"></img>
+    <img src="https://raw.githubusercontent.com/anthonypernia/pre-commit-setup-for-python-with-github-action/develop/assets/pre-commit-ok.png"></img>
     </ul>
     <br>
     <p>The files that we are using:</p>
-        <h3>Pre-commit file: <code>.pre-commit-config.yaml</code></h3>
-    <pre><code>
-fail_fast: false
-repos:
-  - repo: https://github.com/pre-commit/pre-commit-hooks
-    rev: v4.3.0
-    hooks:
-        - id: debug-statements #Check for debugger imports and breakpoint() calls in python files
-        - id: check-ast #Simply check whether files parse as valid python
-        - id: fix-byte-order-marker #removes UTF-8 byte order marker
-        - id: check-json
-        - id: detect-private-key # detect-private-key is not in repo
-        - id: check-yaml
-        - id: check-added-large-files
-        - id: check-shebang-scripts-are-executable
-        - id: check-case-conflict #Check for files with names that would conflict on    case-insensitive filesystem like MacOS HFS+ or Windows FAT
-        - id: end-of-file-fixer #Makes sure files end in a newline and only a newline
-        - id: trailing-whitespace
-        - id: mixed-line-ending
-  - repo: local
-    hooks:
-        - id: black # black is a pre-commit hook that runs to check for format issues
-          name: black
-          entry: black
-          language: system
-          types: [python]
-  - repo: https://github.com/asottile/blacken-docs
-    rev: v1.12.1
-    hooks:
-    -   id: blacken-docs #blacken-docs is a pre-commit hook that runs to check for issues ithe docs
-        additional_dependencies: [black]
-  - repo: https://github.com/pycqa/isort
-    rev: 5.10.1
-    hooks:
-        - id: isort #isort is a pre-commit hook that runs to check for issues in imports and docstrings
-          args: ["--profile", "black", "--filter-files"]
-  - repo: local
-    hooks:
-        - id: pylint # pylint is a pre-commit hook that runs as a linter to check for style
-          name: pylint
-          entry: pylint
-          language: system
-          types: [python]
-          exclude: ^venv/ ^.git/ ^.vscode/ ^.DS_Store
-  - repo: local
-    hooks:
-        - id: mypy # mypy is a pre-commit hook that runs as a linter to check for type errors
-          name: mypy
-          entry: mypy
-          language: system
-          types: [python]
-          exclude: ^venv/ ^.git/ ^.vscode/ ^.DS_Store
-  - repo: https://github.com/asottile/pyupgrade
-    rev: v2.37.0
-    hooks:
-        - id: pyupgrade #pyupgrade is a pre-commit hook that runs to check for issues in th  codebase
-          args: [--py36-plus]
-    </code></pre>
+        <h3>Pre-commit file: <code>.pre-commit-config.yaml</code> <a href="https://github.com/anthonypernia/pre-commit-setup-for-python-with-github-action/blob/main/.pre-commit-config.yaml">Link</a></h3>
+        <p>You can see the file <a href="https://github.com/anthonypernia/pre-commit-setup-for-python-with-github-action/blob/main/.pre-commit-config.yaml">Here</a></p>
     <h3>The Github action to execute pre-commit as a workflow part is: <code>.github/workflows/pre-commit-check.yml</code></h3>
     <pre><code>
 name: pre-commit
@@ -105,13 +49,40 @@ jobs:
       run: |
         pip install -r requirements.txt
     - uses: pre-commit/action@v3.0.0
+    - name: Coverage
+      run: |
+        coverage run -m pytest
+        coverage report -m
+        coverage xml
+    - name: Upload coverage to Codecov
+      uses: codecov/codecov-action@v2
+      with:
+        token: ${{ secrets.CODECOV_TOKEN }}
+        files: ./coverage.xml
+        flags: unittests
+        name: codecov-umbrella
+        fail_ci_if_error: true
     </code></pre>
     <br>
-    Also, in the folder "./actions-to-use" there are two examples:
+    <h3>Also, in folder "actions-to-use" are other templates to use, for example:</h3>
+    <p><a href="https://github.com/anthonypernia/pre-commit-setup-for-python-with-github-action/tree/main/action-to-use">Link to actions-to-use folder</a></p>
     <ul>
-    <li>accept-all.yml, if we want to approve all the PRs that pass the pre-commit</li>
-    <li>check-on-pr-and-push.ym and check-on-pr.yml if we want to run pre-commit on PR</li>
+    <li><p><a href="https://github.com/anthonypernia/pre-commit-setup-for-python-with-github-action/blob/main/action-to-use/pre-commit-and-merge.yml">pre-commit-and-merge.yml</a>, if you want to approve all the PRs that pass the pre-commit hooks</p></li>
+    <li><p><a href="https://github.com/anthonypernia/pre-commit-setup-for-python-with-github-action/blob/main/action-to-use/pre-commit-on-pr.yml">pre-commit-on-pr.yml</a>, if you want to run pre-commit hooks only on PR to Main branch</p></li>
+    <li><p><a href="https://github.com/anthonypernia/pre-commit-setup-for-python-with-github-action/blob/main/action-to-use/pre-commit-on-push-and-pr.yml">pre-commit-on-push-and-pr.yml</a>, if you want to run pre-commit hooks on PR to Main branch and Push to Develop branch</p></li>
+    <li><p><a href="https://github.com/anthonypernia/pre-commit-setup-for-python-with-github-action/blob/main/action-to-use/pre-commit-and-pytest.yml">pre-commit-and-pytest.yml.yml</a>, if you want to run pre-commit hooks on PR to Main branch and Push to Develop branch, but also run Pytest</p></li>
+    <li><p><a href="https://github.com/anthonypernia/pre-commit-setup-for-python-with-github-action/blob/main/action-to-use/pre-commit-pytest-coverage-codecov.yml">pre-commit-pytest-coverage-codecov.yml</a>, if you want to run pre-commit hooks on PR to Main branch,Push to Develop branch, and analyze the coverage using the pytest and coverage libraries usin <a href="https://app.codecov.io/gh">Codecov</a></p></li>
     </ul>
+    <h3>Best Option: pre-commit-pytest-coverage-codecov</h3>
+    <p>The one that I consider the best is the last one, since it checks the coverage, does the tests with pytest, and executes the pre-commit so that you can see the coverage graphs in the PR</p>
+    <p>You need to create an account in <a href="https://app.codecov.io/gh">Codecov</a>, give it permission to scan repositories, get the codecov token , and store in secrets as CODECOV_TOKEN</p>
+    <p>The process flow would be, for example, in PR you can see if the pre-commit was executed without errors</p>
+    <img src="https://raw.githubusercontent.com/anthonypernia/pre-commit-setup-for-python-with-github-action/develop/assets/pre-commit-fail-github.png"></img>
+    <p>When the problem is solved, when pushing again the tests will be updated. After that, the tests will be executed, then you can see the coverage result, and coverage graphs</p>
+    <img src="https://raw.githubusercontent.com/anthonypernia/pre-commit-setup-for-python-with-github-action/develop/assets/bad-pr.png"></img>
+    <img src="https://raw.githubusercontent.com/anthonypernia/pre-commit-setup-for-python-with-github-action/develop/assets/coverage-bad.png"></img>
+    <p>After solving all the errors, you can see all the tests that were approved</p>
+    <img src="https://raw.githubusercontent.com/anthonypernia/pre-commit-setup-for-python-with-github-action/develop/assets/pr-ok.png"></img>
     <br>
     The documentation that I used to create this repository is:
     <p><a href="https://pre-commit.com/#install">https://pre-commit.com/#install</a></p>
@@ -125,5 +96,8 @@ jobs:
     </p>
     <p>Some hooks examples:</p>
     <p><a href="https://github.com/pre-commit/pre-commit-hooks">https://github.com/pre-commit/pre-commit-hooks</a></p>
-    <p><a href="https://docs.pytest.org/en/6.2.x/customize.html">Pytest</a></p>
+    <p>Information about Pytest:</p>
+    <p><a href="https://docs.pytest.org/en/6.2.x/customize.html">https://docs.pytest.org/en/6.2.x/customize.html</a></p>
+    <p>Codecov Documentation:</p>
+    <p><a href="https://docs.codecov.com/docs">https://docs.codecov.com/docs</a></p>
 </div>
