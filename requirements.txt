@@ -5,3 +5,4 @@ pytest
 isort
 pylint
 pytest
+coverage
