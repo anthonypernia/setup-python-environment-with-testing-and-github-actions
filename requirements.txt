@@ -4,3 +4,4 @@ black
 pytest
 isort
 pylint
+pytest

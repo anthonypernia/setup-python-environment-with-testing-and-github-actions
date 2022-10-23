@@ -125,4 +125,5 @@ jobs:
     </p>
     <p>Some hooks examples:</p>
     <p><a href="https://github.com/pre-commit/pre-commit-hooks">https://github.com/pre-commit/pre-commit-hooks</a></p>
+    <p><a href="https://docs.pytest.org/en/6.2.x/customize.html">Pytest</a></p>
 </div>
