@@ -19,4 +19,4 @@ class TestExampleClass:
 
     def test_subtraction2(self):
         """this is a test docstring"""
-        assert ExampleClass("example").subtraction(2, 2) == 4
+        assert ExampleClass("example").subtraction(2, 2) == 1
