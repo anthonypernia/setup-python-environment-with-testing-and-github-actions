@@ -75,8 +75,8 @@ jobs:
     </ul>
     <h3>Best Option: pre-commit-pytest-coverage-codecov</h3>
     <p>The one that I consider the best is the last one, since it checks the coverage, does the tests with pytest, and executes the pre-commit so that you can see the coverage graphs in the PR</p>
-    <p>You need to create an account in <a href="https://app.codecov.io/gh">Codecov</a>, give it permission to scan repositories, get the codecov token , and store in secrets as CODECOV_TOKEN, after that the process is better</p>
-    <p>For example, in PR you can see if the pre-commit was executed without errors</p>
+    <p>You need to create an account in <a href="https://app.codecov.io/gh">Codecov</a>, give it permission to scan repositories, get the codecov token , and store in secrets as CODECOV_TOKEN</p>
+    <p>The process flow would be, for example, in PR you can see if the pre-commit was executed without errors</p>
     <img src="https://raw.githubusercontent.com/anthonypernia/pre-commit-setup-for-python-with-github-action/develop/assets/pre-commit-fail-github.png"></img>
     <p>When the problem is solved, when pushing again the tests will be updated. After that, the tests will be executed, then you can see the coverage result, and coverage graphs</p>
     <img src="https://raw.githubusercontent.com/anthonypernia/pre-commit-setup-for-python-with-github-action/develop/assets/bad-pr.png"></img>
