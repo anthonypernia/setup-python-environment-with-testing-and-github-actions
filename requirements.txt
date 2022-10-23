@@ -4,3 +4,5 @@ black
 pytest
 isort
 pylint
+pytest
+coverage
