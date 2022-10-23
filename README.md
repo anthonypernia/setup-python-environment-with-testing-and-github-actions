@@ -20,9 +20,9 @@
     <h4>Here are two running examples</h4>
     <ul>
     <li>The first example is when some test fails, in this case the Hook solves the problem and you only need to add the files that were modified </li>
-    <img src="https://raw.githubusercontent.com/anthonypernia/pre-commit-python-action-example/main/examples/example2.png"></img>
+    <img src="https://raw.githubusercontent.com/anthonypernia/pre-commit-python-action-example/main/assets/example2.png"></img>
     <li>The second example is when the code passes all tests and is ready to be uploaded to the remote repository.</li>
-    <img src="https://raw.githubusercontent.com/anthonypernia/pre-commit-python-action-example/main/examples/example1.png"></img>
+    <img src="https://raw.githubusercontent.com/anthonypernia/pre-commit-python-action-example/main/assets/example1.png"></img>
     </ul>
     <br>
     <p>The files that we are using:</p>
