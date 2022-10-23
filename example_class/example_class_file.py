@@ -1,25 +1,49 @@
+"""EXAMPLE CLASS"""
 
 
 class ExampleClass:
+    """This is num_1 docstring for the EXAMPLE"""
 
-    def __init__(self, name):
+    def __init__(self, name: str):
+        """This is num_1 docstring for the __init__ method
+
+        Args:
+            name (str): The name of the ExampleClass object
+        """
         self.name = name
 
-    def __str__(self):
-        return self.name
+    def multiplication(self, num_1: int, num_2: int) -> int:
+        """This is num_1 docstring for the multiplication method
 
-    def __repr__(self):
-        return self.name
+        Args:
+            num_1 (int): The first number to multiply
+            num_2 (int): The second number to multiply
 
-    def multiplication(self, a: int, b: int) -> int:
-        return a * b
+        Returns:
+            int: The product of num_1 and num_2
+        """
+        return num_1 * num_2
 
-    def division(self, a: int, b: int) -> int:
-        return a / b
+    def addition(self, num_1: int, num_2: int) -> int:
+        """This is num_1 docstring for the addition method
 
-    def addition(self, a: int, b: int) -> int:
-        return a + b
+        Args:
+            num_1 (int): The first number to add
+            num_2 (int): The second number to add
 
-    def subtraction(self, a: int, b: int) -> int:
-        return a - b
-        
+        Returns:
+            int: The sum of num_1 and num_2
+        """
+        return num_1 + num_2
+
+    def subtraction(self, num_1: int, num_2: int) -> int:
+        """This is num_1 docstring for the subtraction method
+
+        Args:
+            num_1 (int): The first number to subtract
+            num_2 (int): The second number to subtract
+
+        Returns:
+            int: The difference of num_1 and num_2
+        """
+        return num_1 - num_2

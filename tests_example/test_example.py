@@ -1,25 +1,22 @@
-
+"""EXAMPLE TEST"""
 from example_class.example_class_file import ExampleClass
 
 
 class TestExampleClass:
+    """EXAMPLE TEST"""
 
     def test_multiplication(self):
-        assert ExampleClass('example').multiplication(2, 2) == 4
-
-    def test_division(self):
-        assert ExampleClass('example').division(2, 2) == 1
+        """this is a test docstring"""
+        assert ExampleClass("example").multiplication(2, 2) == 4
 
     def test_addition(self):
-        assert ExampleClass('example').addition(2, 2) == 4
+        """this is a test docstring"""
+        assert ExampleClass("example").addition(2, 2) == 4
 
     def test_subtraction(self):
-        assert ExampleClass('example').subtraction(2, 2) == 0
+        """this is a test docstring"""
+        assert ExampleClass("example").subtraction(2, 2) == 0
 
-    def test_str(self):
-        assert str(ExampleClass('example')) == 'example'
-
-    def test_subtraction(self):
-        assert ExampleClass('example').subtraction(2, 2) == 5
-        
-
+    def test_subtraction2(self):
+        """this is a test docstring"""
+        assert ExampleClass("example").subtraction(2, 2) == 4
