@@ -1,7 +1,7 @@
 """ EXAMPLE CLASS 2 """
 
 
-class ExampleClass2:
+class ExampleClassSecond:
     """EXAMPLE CLASS 2"""
 
     def is_palindrome(self, word: str) -> bool:
