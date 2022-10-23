@@ -73,8 +73,14 @@ jobs:
     <li><p><a href="https://github.com/anthonypernia/pre-commit-setup-for-python-with-github-action/blob/main/action-to-use/pre-commit-and-pytest.yml">pre-commit-and-pytest.yml.yml</a>, if you want to run pre-commit hooks on PR to Main branch and Push to Develop branch, but also run Pytest</p></li>
     <li><p><a href="https://github.com/anthonypernia/pre-commit-setup-for-python-with-github-action/blob/main/action-to-use/pre-commit-pytest-coverage-codecov.yml">pre-commit-pytest-coverage-codecov.yml</a>, if you want to run pre-commit hooks on PR to Main branch,Push to Develop branch, and analyze the coverage using the pytest and coverage libraries usin <a href="https://app.codecov.io/gh">Codecov</a></p></li>
     </ul>
-    <p>The one that I consider the best is the last one, since it checks the coverage, does the tests with pytest, and executes the pre-commit so that you can see the coverage graph in the PR</p>
-    <img src="https://raw.githubusercontent.com/anthonypernia/pre-commit-setup-for-python-with-github-action/develop/assets/pre-commit-ok.png"></img>
+    <p>The one that I consider the best is the last one, since it checks the coverage, does the tests with pytest, and executes the pre-commit so that you can see the coverage graphs in the PR</p>
+    <p>For example, in PR you can see if the pre-commit was executed without errors</p>
+    <img src="https://raw.githubusercontent.com/anthonypernia/pre-commit-setup-for-python-with-github-action/develop/assets/pre-commit-fail-github.png"></img>
+    <p>When the problem is solved, when pushing again the tests will be updated. After that, the tests will be executed, then you can see the coverage result, and coverage graphs</p>
+    <img src="https://raw.githubusercontent.com/anthonypernia/pre-commit-setup-for-python-with-github-action/develop/assets/bad-pr.png"></img>
+    <img src="https://raw.githubusercontent.com/anthonypernia/pre-commit-setup-for-python-with-github-action/develop/assets/coverage-bad.png"></img>
+    <p>After solving all the errors, you can see all the tests that were approved</p>
+    <img src="https://raw.githubusercontent.com/anthonypernia/pre-commit-setup-for-python-with-github-action/develop/assets/pr-ok.png"></img>
     <br>
     The documentation that I used to create this repository is:
     <p><a href="https://pre-commit.com/#install">https://pre-commit.com/#install</a></p>
