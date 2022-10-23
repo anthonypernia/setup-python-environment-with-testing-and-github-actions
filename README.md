@@ -70,6 +70,7 @@ jobs:
     <li><p><a href="https://github.com/anthonypernia/pre-commit-setup-for-python-with-github-action/blob/main/action-to-use/pre-commit-and-merge.yml">pre-commit-and-merge.yml</a>, if you want to approve all the PRs that pass the pre-commit hooks</p></li>
     <li><p><a href="https://github.com/anthonypernia/pre-commit-setup-for-python-with-github-action/blob/main/action-to-use/pre-commit-on-pr.yml">pre-commit-on-pr.yml</a>, if you want to run pre-commit hooks only on PR to Main branch</p></li>
     <li><p><a href="https://github.com/anthonypernia/pre-commit-setup-for-python-with-github-action/blob/main/action-to-use/pre-commit-on-push-and-pr.yml">pre-commit-on-push-and-pr.yml</a>, if you want to run pre-commit hooks on PR to Main branch and Push to Develop branch</p></li>
+    <li><p><a href="https://github.com/anthonypernia/pre-commit-setup-for-python-with-github-action/blob/main/action-to-use/pre-commit-on-push-and-pr.yml">pre-commit-on-push-and-pr.yml</a>, if you want to run pre-commit hooks on PR to Main branch and Push to Develop branch</p></li>
     <li><p><a href="https://github.com/anthonypernia/pre-commit-setup-for-python-with-github-action/blob/main/action-to-use/pre-commit-pytest-coverage-codecov.yml">pre-commit-pytest-coverage-codecov.yml</a>, if you want to run pre-commit hooks on PR to Main branch,Push to Develop branch, and analyze the coverage using the pytest and coverage libraries usin <a href="https://app.codecov.io/gh">Codecov</a></p></li>
     </ul>
     <br>
@@ -85,5 +86,8 @@ jobs:
     </p>
     <p>Some hooks examples:</p>
     <p><a href="https://github.com/pre-commit/pre-commit-hooks">https://github.com/pre-commit/pre-commit-hooks</a></p>
-    <p><a href="https://docs.pytest.org/en/6.2.x/customize.html">Pytest</a></p>
+    <p>Information about Pytest:</p>
+    <p><a href="https://docs.pytest.org/en/6.2.x/customize.html">https://docs.pytest.org/en/6.2.x/customize.html</a></p>
+    <p>Codecov Documentation:</p>
+    <p><a href="https://docs.codecov.com/docs">https://docs.codecov.com/docs</a></p>
 </div>
