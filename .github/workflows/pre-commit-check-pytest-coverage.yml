@@ -1,0 +1,32 @@
+name: pre-commit
+on:
+  pull_request:
+    branches: [main]
+  push:
+    branches: [develop]
+jobs:
+  pre-commit:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - uses: actions/setup-python@v3
+    - name: Install pre-commit
+      run: |
+        pip install pre-commit
+    - name: Install requirements
+      run: |
+        pip install -r requirements.txt
+    - uses: pre-commit/action@v3.0.0
+    - name: Coverage
+      run: |
+        coverage run -m pytest
+        coverage report -m
+        coverage xml
+    - name: coverage codecov
+      uses: codecov/codecov-action@v2
+      with:
+        token: ${{ secrets.CODECOV_TOKEN }}
+        files: ./coverage.xml
+        flags: unittests
+        name: codecov-umbrella
+        fail_ci_if_error: true
