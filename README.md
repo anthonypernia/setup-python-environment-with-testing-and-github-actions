@@ -33,13 +33,14 @@
     <h3>Here are two running examples</h3>
     <ul>
     <li>The first example is when some test fails, in one case the Hook solves the problem and you only need to add the files that were modified, in the other case, you need to solve the code issue</li>
-    <img src="https://raw.githubusercontent.com/anthonypernia/setup-python-environment-with-testing-and-github-actions/develop/assets/pre-commit-fail.png"></img>
+    <img src="https://raw.githubusercontent.com/anthonypernia/setup-python-environment-with-testing-and-github-actions/main/assets/pre-commit-fail.png"></img>
     <li>The second example is when the code passes all tests and is ready to be uploaded to the remote repository.</li>
-    <img src="https://raw.githubusercontent.com/anthonypernia/setup-python-environment-with-testing-and-github-actions/develop/assets/pre-commit-ok.png"></img>
+    <img src="https://raw.githubusercontent.com/anthonypernia/setup-python-environment-with-testing-and-github-actions/main/assets/pre-commit-ok.png"></img>
     </ul>
     <p>however, the main function of pre-commit is to be called automatically before committing. You can do it with:  <pre><code>pre-commit install</code></pre></p>
     <p>You will receive a message like this: <pre><code>pre-commit installed at .git/hooks/pre-commit</code></pre></p></p>
-    <br>
+    <p>Then, every time you do a commit, the pre-commit will be executed</p>
+    <img src="https://raw.githubusercontent.com/anthonypernia/setup-python-environment-with-testing-and-github-actions/main/assets/commit-example.png"></img>
     <p>You can copy my pre-commit configuration:</p>
     <p>Pre-commit file: <code>.pre-commit-config.yaml</code> <a href="https://github.com/anthonypernia/setup-python-environment-with-testing-and-github-actions/blob/main/.pre-commit-config.yaml">Link</a></p>
     <h2>Github Action using Pre-Commit, PyTest and Coverage</h2>
@@ -65,12 +66,12 @@
     <p>The one that I consider the best is the last one because it checks the coverage, execute the pytest suite, and executes the pre-commit so that  at the end you can see the coverage graphs in the PR</p>
     <p>You need to create an account in <a href="https://app.codecov.io/gh">Codecov</a>, give it permission to scan repositories, get the codecov token , and store in secrets as CODECOV_TOKEN</p>
     <p>Here is an example of a PR using that workflow, in that case, we have some errors in pre-commit and we need to solve it</p>
-    <img src="https://raw.githubusercontent.com/anthonypernia/setup-python-environment-with-testing-and-github-actions/develop/assets/pre-commit-fail-github.png"></img>
+    <img src="https://raw.githubusercontent.com/anthonypernia/setup-python-environment-with-testing-and-github-actions/main/assets/pre-commit-fail-github.png"></img>
     <p>When the problem is solved, when you push your code again, the tests will be updated, in that case, we need to update the test to complete the coverage</p>
-    <img src="https://raw.githubusercontent.com/anthonypernia/setup-python-environment-with-testing-and-github-actions/develop/assets/bad-pr.png"></img>
-    <img src="https://raw.githubusercontent.com/anthonypernia/setup-python-environment-with-testing-and-github-actions/develop/assets/coverage-bad.png"></img>
+    <img src="https://raw.githubusercontent.com/anthonypernia/setup-python-environment-with-testing-and-github-actions/main/assets/bad-pr.png"></img>
+    <img src="https://raw.githubusercontent.com/anthonypernia/setup-python-environment-with-testing-and-github-actions/main/assets/coverage-bad.png"></img>
     <p>After solving all the errors, you can see all the tests that were approved</p>
-    <img src="https://raw.githubusercontent.com/anthonypernia/setup-python-environment-with-testing-and-github-actions/develop/assets/pr-ok.png"></img>
+    <img src="https://raw.githubusercontent.com/anthonypernia/setup-python-environment-with-testing-and-github-actions/main/assets/pr-ok.png"></img>
     <br>
     The documentation that I used to create this repository is:
     <p><a href="https://pre-commit.com/#install">https://pre-commit.com/#install</a></p>
