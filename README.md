@@ -3,9 +3,10 @@
         Setup Python environment with pre-commit, pytest and github actions
     </h1>
     <p>This repository was created from some blogs and documents, which I will leave below.</p>
+    <p>Works in python and PySpark.</p>
     <br>
     <h3>How to use:</h3>
-    <p>You can clone the repo <a href="https://github.com/anthonypernia/pre-commit-python-action-example.git">https://github.com/anthonypernia/pre-commit-python-action-example.git</a> or just download the files and put the files in your repo</p>
+    <p>You can clone the repo <a href="https://github.com/anthonypernia/pre-commit-python-action-example.git">https://github.com/anthonypernia/pre-commit-python-action-example.git</a> or just download the files that you need and use in your repo.</p>
     <p>Install the necessary libraries:</p>
     <ul>
       <li>pre-commit</li>
@@ -16,9 +17,9 @@
       <li>pylint</li>
       <li>coverage</li>
     </ul>
-    <p>Or just use: <code>pip install -r requirements.txt </code></p>
+    <p>Or just install the requirements.txt that is in this repo using: <code>pip install -r requirements.txt </code></p>
     <h2>Pre-commit</h2>
-    <p>Pre-commit is a tool that we use to identify issues in our code, such as type errors, functions without documentation, etc  </p>
+    <p>Pre-commit is a tool that we use to identify issues in our code, such as type errors, syntax errors, functions without documentation, etc  </p>
     <p>To learn more about Pre-commit you can check the <a href="https://pre-commit.com/#intro">Documentation</a> </p>
     <p>To execute <code>pre-commit</code> use the following command:</p>
     <pre><code>pre-commit run --all-files</code></pre>
@@ -37,15 +38,17 @@
     <li>The second example is when the code passes all tests and is ready to be uploaded to the remote repository.</li>
     <img src="https://raw.githubusercontent.com/anthonypernia/setup-python-environment-with-testing-and-github-actions/main/assets/pre-commit-ok.png"></img>
     </ul>
-    <p>however, the main function of pre-commit is to be called automatically before committing. You can do it with:  <pre><code>pre-commit install</code></pre></p>
+    <p>However, the main function of pre-commit is to be called automatically before the commit. You can do it with:  <pre><code>pre-commit install</code></pre></p>
     <p>You will receive a message like this: <pre><code>pre-commit installed at .git/hooks/pre-commit</code></pre></p></p>
     <p>Then, every time you do a commit, the pre-commit will be executed</p>
     <img src="https://raw.githubusercontent.com/anthonypernia/setup-python-environment-with-testing-and-github-actions/main/assets/commit-example.png"></img>
+    <p>In case it passes all the tests, the commit will be executed, otherwise it will not</p>
     <p>You can copy my pre-commit configuration:</p>
     <p>Pre-commit file: <code>.pre-commit-config.yaml</code> <a href="https://github.com/anthonypernia/setup-python-environment-with-testing-and-github-actions/blob/main/.pre-commit-config.yaml">Link</a></p>
     <h2>Github Action using Pre-Commit, PyTest and Coverage</h2>
     <p>Github actions is the way that we have to apply CICD or run customized workflows</p>
     <p>You can take a look at the <a href="https://docs.github.com/en/actions">Documentation</a></p>
+    <p>The funniest thing is that pre-commit can be added to a workflow as an automated task, we can add unit testing, check the coverage, etc. All this task can be executed after push our code or create a pull request.</p>
     <h4>There are some examples with customized workflows:</h4>
     <ul>
     <li><p><a href="https://github.com/anthonypernia/setup-python-environment-with-testing-and-github-actions/blob/main/action-to-use/pre-commit-and-merge.yml">pre-commit-and-merge.yml</a>, This workflow will merge all the push that pass the pre-commit tests, from the develop branch, into the master branch</p></li>
