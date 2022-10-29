@@ -6,7 +6,6 @@ class ExampleClass:
 
     def __init__(self, name: str):
         """This is num_1 docstring for the __init__ method
-
         Args:
             name (str): The name of the ExampleClass object
         """

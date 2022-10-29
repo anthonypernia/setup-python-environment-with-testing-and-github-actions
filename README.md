@@ -37,7 +37,8 @@
     <li>The second example is when the code passes all tests and is ready to be uploaded to the remote repository.</li>
     <img src="https://raw.githubusercontent.com/anthonypernia/setup-python-environment-with-testing-and-github-actions/develop/assets/pre-commit-ok.png"></img>
     </ul>
-    <p>You can also set pre-commit to run after every commit. <pre><code>pre-commit install</code></pre></p>
+    <p>however, the main function of pre-commit is to be called automatically before committing. You can do it with:  <pre><code>pre-commit install</code></pre></p>
+    <p>You will receive a message like this: <pre><code>pre-commit installed at .git/hooks/pre-commit</code></pre></p></p>
     <br>
     <p>You can copy my pre-commit configuration:</p>
     <p>Pre-commit file: <code>.pre-commit-config.yaml</code> <a href="https://github.com/anthonypernia/setup-python-environment-with-testing-and-github-actions/blob/main/.pre-commit-config.yaml">Link</a></p>
