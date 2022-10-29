@@ -69,7 +69,7 @@
     <p>The one that I consider the best is the last one because it checks the coverage, execute the pytest suite, and executes the pre-commit so that  at the end you can see the coverage graphs in the PR</p>
     <p>You need to create an account in <a target="_blank" href="https://app.codecov.io/gh">Codecov</a>, give it permission to scan repositories, get the codecov token , and store in secrets as CODECOV_TOKEN</p>
     <p>If you want to configure coverage to approve, you need to create a file called <code>codecov.yml</code></p>
-    <p>You can check the file that I use in <a target="_blank" href="https://github.com/anthonypernia/setup-python-environment-with-testing-and-github-actions/blob/main/codecov.yml" ></a></p>
+    <p>You can check the file that I use <a target="_blank" href="https://github.com/anthonypernia/setup-python-environment-with-testing-and-github-actions/blob/main/codecov.yml" >Here</a></p>
     <p>Here is an example of a PR using that workflow, in that case, we have some errors in pre-commit and we need to solve it</p>
     <img src="https://raw.githubusercontent.com/anthonypernia/setup-python-environment-with-testing-and-github-actions/main/assets/pre-commit-fail-github.png"></img>
     <p>When the problem is solved, when you push your code again, the tests will be updated, in that case, we need to update the test to complete the coverage</p>
