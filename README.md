@@ -41,10 +41,10 @@
     <br>
     <p>You can copy my pre-commit configuration:</p>
     <p>Pre-commit file: <code>.pre-commit-config.yaml</code> <a href="https://github.com/anthonypernia/setup-python-environment-with-testing-and-github-actions/blob/main/.pre-commit-config.yaml">Link</a></p>
-    <h2>Github Action using Pre-Commit, Pytest and Coverage</h2>
+    <h2>Github Action using Pre-Commit, PyTest and Coverage</h2>
     <p>Github actions is the way that we have to apply CICD or run customized workflows</p>
     <p>You can take a look at the <a href="https://docs.github.com/en/actions">Documentation</a></p>
-    <h4>There are some examples with sustomized workflows:</h4>
+    <h4>There are some examples with customized workflows:</h4>
     <ul>
     <li><p><a href="https://github.com/anthonypernia/setup-python-environment-with-testing-and-github-actions/blob/main/action-to-use/pre-commit-and-merge.yml">pre-commit-and-merge.yml</a>, This workflow will merge all the push that pass the pre-commit tests, from the develop branch, into the master branch</p></li>
     <li><p><a href="https://github.com/anthonypernia/setup-python-environment-with-testing-and-github-actions/blob/main/action-to-use/pre-commit-on-pr.yml">pre-commit-on-pr.yml</a>, This workflow will execute pre-commit on all pull requests to main branch and will show the result in the PR</p></li>
@@ -63,7 +63,7 @@
     <h3>Best Option: pre-commit-pytest-coverage-codecov</h3>
     <p>The one that I consider the best is the last one because it checks the coverage, execute the pytest suite, and executes the pre-commit so that  at the end you can see the coverage graphs in the PR</p>
     <p>You need to create an account in <a href="https://app.codecov.io/gh">Codecov</a>, give it permission to scan repositories, get the codecov token , and store in secrets as CODECOV_TOKEN</p>
-    <p>Here is an example of a PR using that workflow, in that case, we have some errores in pre-commit and we need to solve it</p>
+    <p>Here is an example of a PR using that workflow, in that case, we have some errors in pre-commit and we need to solve it</p>
     <img src="https://raw.githubusercontent.com/anthonypernia/setup-python-environment-with-testing-and-github-actions/develop/assets/pre-commit-fail-github.png"></img>
     <p>When the problem is solved, when you push your code again, the tests will be updated, in that case, we need to update the test to complete the coverage</p>
     <img src="https://raw.githubusercontent.com/anthonypernia/setup-python-environment-with-testing-and-github-actions/develop/assets/bad-pr.png"></img>
