@@ -4,7 +4,7 @@ repos:
   - repo: https://github.com/pre-commit/pre-commit-hooks
     rev: v4.4.0
     hooks:
-      - id: debug-statements #Check for debugger imports and breakpoint() in python files
+      - id: debug-statements #Check for debugger imports and breakpoint() in python files .
       - id: check-ast #Simply check whether files parse as valid python
       - id: fix-byte-order-marker #removes UTF-8 byte order marker
       - id: check-json

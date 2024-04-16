@@ -1,4 +1,4 @@
-name: "Build and Release Python Package in whl format"
+name: "Build and Release Python Package in whl"
 run-name: "Package build version: ${{ github.event }}"
 on:
   push:

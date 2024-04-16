@@ -1,4 +1,5 @@
 """EXAMPLE TEST"""
+
 from example_class.example_class_file import ExampleClass
 
 

@@ -1,4 +1,4 @@
-"""EXAMPLE CLASS"""
+"""EXAMPLE CLASS """
 
 
 class ExampleClass:

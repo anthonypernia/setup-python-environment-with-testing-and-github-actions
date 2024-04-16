@@ -5,3 +5,4 @@ pytest
 isort
 pylint
 coverage
+types-setuptools
