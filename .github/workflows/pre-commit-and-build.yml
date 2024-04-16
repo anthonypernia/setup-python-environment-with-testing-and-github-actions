@@ -1,0 +1,32 @@
+name: "Build and Release Python Package in whl format"
+run-name: "Package build version: ${{ github.event }}"
+on:
+  push:
+    branches: [develop, main]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Set up Python
+        uses: actions/setup-python@v3
+        with:
+          python-version: '3.x'
+      - name: Install pre-commit
+        run: |
+          pip install pre-commit
+      - name: Install requirements
+        run: |
+          pip install -r requirements.txt
+      - uses: pre-commit/action@v3.0.1
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install setuptools wheel twine
+      - name: Build wheel
+        run: VERSION=${{ github.event.inputs.release-version }} python setup.py bdist_wheel
+      - name: Upload wheel
+        uses: actions/upload-artifact@v2
+        with:
+          name: dataeng_utils-${{ github.event.inputs.release-version }}-py3-none-any.whl
+          path: dist/*.whl
