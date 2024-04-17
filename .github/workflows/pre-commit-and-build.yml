@@ -28,5 +28,5 @@ jobs:
       - name: Upload wheel
         uses: actions/upload-artifact@v2
         with:
-          name: dataeng_utils-${{ github.event.inputs.release-version }}-py3-none-any.whl
+          name: ${{ github.event.repository.name }}-${{ github.ref_name }}-${{ github.event.inputs.release-version }}-py3-none-any.whl
           path: dist/*.whl
